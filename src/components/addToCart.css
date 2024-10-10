@@ -34,12 +34,9 @@
   height: 15px;
 }
 
-.in-cart-button > :hover {
-  background-color: white;
-}
-
-.in-cart-button > button:hover img {
-  background-color: black
+.in-cart-button > button:hover {
+  background-color: #EF3F00;
+  transition: background-color 0.2s ease;
 }
 
 .in-cart-button-p {
