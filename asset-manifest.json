@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Coffe-menu/static/css/main.dcb79959.css",
+    "main.js": "/Coffe-menu/static/js/main.5fc5529b.js",
+    "static/js/453.707bc0b2.chunk.js": "/Coffe-menu/static/js/453.707bc0b2.chunk.js",
+    "static/media/image-brownie-desktop.jpg": "/Coffe-menu/static/media/image-brownie-desktop.d7aa002eaa5a758791eb.jpg",
+    "static/media/image-tiramisu-desktop.jpg": "/Coffe-menu/static/media/image-tiramisu-desktop.788532738e368d823eec.jpg",
+    "static/media/image-waffle-desktop.jpg": "/Coffe-menu/static/media/image-waffle-desktop.d5fd10e216e40338fb44.jpg",
+    "static/media/image-meringue-desktop.jpg": "/Coffe-menu/static/media/image-meringue-desktop.5723c0dfc95c54781af3.jpg",
+    "static/media/image-creme-brulee-desktop.jpg": "/Coffe-menu/static/media/image-creme-brulee-desktop.1226c76b5d7d92977bad.jpg",
+    "static/media/image-cake-desktop.jpg": "/Coffe-menu/static/media/image-cake-desktop.357e853d078bca5361e0.jpg",
+    "static/media/image-baklava-desktop.jpg": "/Coffe-menu/static/media/image-baklava-desktop.38a07881209c68374fb6.jpg",
+    "static/media/image-macaron-desktop.jpg": "/Coffe-menu/static/media/image-macaron-desktop.a049dff5cd9efb9cbb4c.jpg",
+    "static/media/image-panna-cotta-desktop.jpg": "/Coffe-menu/static/media/image-panna-cotta-desktop.5d3aeb4bde29011c2258.jpg",
+    "static/media/illustration-empty-cart.svg": "/Coffe-menu/static/media/illustration-empty-cart.c2bca079754e885ead5da25eb67b468e.svg",
+    "static/media/icon-order-confirmed.svg": "/Coffe-menu/static/media/icon-order-confirmed.9e051d820f7076aec87161399399c90a.svg",
+    "static/media/icon-carbon-neutral.svg": "/Coffe-menu/static/media/icon-carbon-neutral.13953e5e1e4c166b4acd1fb7ead600c5.svg",
+    "index.html": "/Coffe-menu/index.html",
+    "static/media/icon-add-to-cart.svg": "/Coffe-menu/static/media/icon-add-to-cart.12141fdf0da9c38c6421fe087a5b5125.svg",
+    "static/media/icon-remove-item.svg": "/Coffe-menu/static/media/icon-remove-item.f6d5b4bec643d592f9e7f7c6ce5bbd00.svg",
+    "static/media/icon-increment-quantity.svg": "/Coffe-menu/static/media/icon-increment-quantity.198f568ac3a5878a42e68f03afb1837b.svg",
+    "static/media/icon-decrement-quantity.svg": "/Coffe-menu/static/media/icon-decrement-quantity.94e32888eee4ef88beccedc6f9534341.svg",
+    "main.dcb79959.css.map": "/Coffe-menu/static/css/main.dcb79959.css.map",
+    "main.5fc5529b.js.map": "/Coffe-menu/static/js/main.5fc5529b.js.map",
+    "453.707bc0b2.chunk.js.map": "/Coffe-menu/static/js/453.707bc0b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcb79959.css",
+    "static/js/main.5fc5529b.js"
+  ]
+}
