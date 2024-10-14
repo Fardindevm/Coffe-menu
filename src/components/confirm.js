@@ -4,7 +4,6 @@ import Confirmed from'../images/icon-order-confirmed.svg'
 import remove from '../images/icon-remove-item.svg'
 
 const Confirm = ({ onClose, totalPrice, ItemsProp, resetButton, products }) => {
-  console.log(ItemsProp)
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
@@ -13,7 +12,6 @@ const Confirm = ({ onClose, totalPrice, ItemsProp, resetButton, products }) => {
   const handleSubmitBtn = () => {
     onClose();
     resetButton();
-    console.log(products)
   }
 
   return (

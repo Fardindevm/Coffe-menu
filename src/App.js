@@ -113,13 +113,13 @@ class App extends Component {
   }
 
   handleAddToCart = (productName, price, photo) => {
+    const element = document.getElementById(productName)
+    element.style.border= "2px solid #c83b0e"
     this.setState(prevState => {      
       const existingItem = prevState.addedItem.find(item => item.productName === productName);
       let newAddedItem;
       let total = prevState.totalPrice + price;
       let product;
-      console.log(existingItem)
-      console.log(price)
       if (existingItem) {
         newAddedItem = prevState.addedItem.map(item => 
           item.productName === productName 
@@ -144,14 +144,12 @@ class App extends Component {
   
 
   removeItem = (index, name) => {
-    
+    const element = document.getElementById(name)
+    element.style.border = "none"
     const updatedItems = this.state.addedItem.filter((_, i) => i !== index);
     // const findItem = this.state.addedItem.find((_, i) => i === index);
     const findProduct = this.state.products.find((i) => i.fullName === name);
     const findItem = this.state.addedItem.find((item) => item.productName === findProduct.fullName)
-    console.log(name)
-    console.log(this.state.addedItem)
-    console.log(findProduct)
     if (findItem.count <= 1) {
       this.updateShowButton(findProduct, true);
 
@@ -175,22 +173,64 @@ class App extends Component {
     this.updateTotal(findItem)
   }
 
+  remove = (index, name) => {
+    const element = document.getElementById(name)
+    element.style.border = "none"
+    const findProduct = this.state.products.find((i) => i.fullName === name);
+
+    const updatedItems = this.state.addedItem.filter((_, i) => i !== index);
+    const findItem = this.state.addedItem.find((item) => item.productName === findProduct.fullName)
+    const updatedItem = {
+      ...findItem,
+      count: findItem.count - 1,
+      changedPrice: findItem.changedPrice - (findItem.changedPrice / findItem.count)
+    }
+    this.updateShowButton(findProduct, true);
+
+    if (this.state.addedItem.length > 1) {
+    this.setState(() => ({ addedItem: updatedItems}));
+      
+      this.updateShowItems(true)
+    } else {
+      this.setState(() => ({ addedItem: updatedItems}));
+      this.updateShowItems(false);
+    }
+    this.updateCounts(updatedItem, findItem)
+    this.updateTotalremove(findItem)
+
+}
+
   updateItems = (newItems) => {
     this.setState((prevState) => ({ addedItem: newItems, totalItem: prevState.totalItem - 1}));
   }
-  
-  updateCounts = (updatedItem) => {
-    this.setState(prevState => ({
+
+  updateCounts = (updatedItem, findItem) => {
+    this.setState(prevState => {
+      let total;
+      if (findItem) {
+        total = prevState.totalItem - findItem.count
+      } else {
+        total = prevState.totalItem - 1
+      }
+      
+      return {
       addedItem: prevState.addedItem.map(item => 
         item.productName === updatedItem.productName ? updatedItem : item
       ),
-      totalItem: prevState.totalItem - 1,
-    }));
+      totalItem: total,
+      }
+    });
   }
   
   updateTotal = (findItem) => {
     this.setState(prevState => ({
       totalPrice: prevState.totalPrice - findItem.changedPrice / findItem.count
+    }))
+  }
+
+  updateTotalremove = (findItem) => {
+    this.setState(prevState => ({
+      totalPrice: prevState.totalPrice - findItem.changedPrice 
     }))
   }
 
@@ -238,7 +278,7 @@ render() {
               
               <div className='product-container' key={index}>
                 <div className='Main-picture-info'>
-                  <img src={product.image} className="dessert-photo" alt={`${product.shortName}-desktop`} />
+                  <img src={product.image} className="dessert-photo" alt={`${product.shortName}-desktop`} id={product.fullName}/>
                   {product.showButton ? 
                   <button 
                     className='add-to-cart' 
@@ -282,7 +322,7 @@ render() {
               updateShowButton={this.updateShowButton}
               updateItems={this.updateItems}
               updateTotal={this.updateTotal}
-              removeItem={this.removeItem}
+              removeItem={this.remove}
               toggleConfirm={this.toggleConfirm}
               />
             ) : (
